@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -18,9 +19,44 @@
     --foreground: #ededed;
   }
 }
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 100px; */
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* background: var(--background); */
+  /* color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+
+.font-comfortaa {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.font-great-vibes {
+  font-family: "Great Vibes", cursive;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate(0vw, -100%);
+  }
+  50% {
+    transform: translate(5vw, 50vh);
+  }
+  100% {
+    transform: translate(0vw, 100vh);
+  }
+}
+
+.animate-snow-fall {
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }

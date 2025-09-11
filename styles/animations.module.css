@@ -1,0 +1,207 @@
+/* styles/animations.module.css */
+
+/* --- Cấu hình chung cho tất cả các hiệu ứng --- */
+/* Đảm bảo các phần tử ban đầu có chuyển động mượt mà khi xuất hiện */
+/* Giữ nguyên animateOnScroll nếu bạn muốn áp dụng transition chung cho mọi hiệu ứng */
+.animateOnScroll {
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* --- Các hiệu ứng đã có --- */
+/* (Giữ nguyên như bạn đã sửa) */
+
+/* 1. Từ trái vào (Slide In Left) */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.slide-in-left.isVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 2. Từ phải vào (Slide In Right) */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.slide-in-right.isVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 3. Ở giữa hiện lên (Fade In Up) */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.fade-in-up.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. Mờ dần và thu nhỏ (Fade In Zoom) */
+.fade-in-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-in-zoom.isVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 5. Xoay nhẹ và hiện lên (Rotate In) */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-15deg) translateY(30px);
+}
+.rotate-in.isVisible {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+}
+
+/* 6. Mờ dần (Simple Fade In) */
+.fade-in {
+  opacity: 0;
+}
+.fade-in.isVisible {
+  opacity: 1;
+}
+
+/* 7. Trượt từ trên xuống (Slide In Down) */
+.slide-in-down {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.slide-in-down.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 8. Bóng mờ (Blur In) */
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+}
+.blur-in.isVisible {
+  opacity: 1;
+  filter: none;
+}
+
+/* --- HIỆU ỨNG MỚI ĐẸP HƠN --- */
+
+/* 9. Nảy nhẹ từ dưới lên (Pop Up) */
+/* Cảm giác như phần tử bật lên và hơi nảy nhẹ */
+.pop-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+.pop-up.isVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  /* Có thể thêm nhẹ một animation riêng để tạo hiệu ứng nảy */
+  animation: popUpAnimation 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
+}
+@keyframes popUpAnimation {
+  0% {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 1;
+  } /* Vượt quá một chút */
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 10. Mở rộng từ trung tâm (Expand In) */
+/* Phần tử như nở ra từ điểm giữa, thường dùng cho các thẻ hoặc icon */
+.expand-in {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.expand-in.isVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 11. Trượt và hơi xoắn (Twist In) */
+/* Kết hợp trượt và xoay nhẹ nhàng */
+.twist-in {
+  opacity: 0;
+  transform: translateX(-50px) rotate(-5deg);
+}
+.twist-in.isVisible {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+}
+
+/* 12. Xuất hiện từng chữ (Letter by Letter - phức tạp hơn, thường cần JS) */
+/* Mình sẽ mô phỏng bằng cách tạo hiệu ứng delay cho nhiều phần tử con, 
+   hoặc cho một khối văn bản có nhiều dòng. */
+.stagger-fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+/* Hiệu ứng này sẽ cần điều chỉnh trong component React nếu bạn muốn từng phần tử con
+   xuất hiện lần lượt. Dưới đây là phiên bản đơn giản cho một khối. */
+.stagger-fade-in-up.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Để tạo hiệu ứng stagger, bạn cần áp dụng delay cho từng phần tử con
+     Hoặc bạn có thể dùng một thư viện animation như Framer Motion để dễ dàng hơn */
+}
+
+/* 13. Dịch chuyển Parallax nhẹ (Parallax Shift) */
+/* Tạo cảm giác phần tử di chuyển nhẹ hơn tốc độ cuộn */
+/* Hiệu ứng này thường phức tạp hơn và cần JS để tính toán vị trí cuộn.
+   Mình sẽ làm một phiên bản đơn giản chỉ dịch chuyển nhẹ khi hiện ra. */
+.parallax-shift {
+  opacity: 0;
+  transform: translateY(80px); /* Bắt đầu xa hơn bình thường */
+}
+.parallax-shift.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Để hiệu ứng parallax thực sự hoạt động, bạn sẽ cần lắng nghe sự kiện cuộn
+   và cập nhật transform translateY dựa trên vị trí cuộn. */
+
+/* 14. Hiệu ứng gạch ngang (Swipe Up/Down - thường dùng cho nền hoặc overlay) */
+/* Khối màu hoặc hình ảnh như được "quét" qua. */
+.swipe-up {
+  /* Giả định có một phần tử con bên trong với chiều cao 0 */
+  position: relative;
+  overflow: hidden;
+}
+.swipe-up::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Bắt đầu với chiều cao 0 */
+  background: var(--swipe-color, #a8d5e5); /* Màu quét, có thể tùy chỉnh */
+  transition: height 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1; /* Đảm bảo nó nằm dưới nội dung */
+}
+.swipe-up.isVisible::before {
+  height: 100%; /* Quét lên toàn bộ */
+}
+/* Hiệu ứng này phức tạp hơn và cần cấu trúc HTML cụ thể hoặc xử lý trong React.
+   Nội dung chính có thể mờ dần sau khi quét. */
+.swipe-up > * {
+  /* Ví dụ: nội dung bên trong */
+  opacity: 0;
+  transition: opacity 0.8s ease-out 0.4s; /* Delay opacity để nó hiện sau khi quét */
+}
+.swipe-up.isVisible > * {
+  opacity: 1;
+}
