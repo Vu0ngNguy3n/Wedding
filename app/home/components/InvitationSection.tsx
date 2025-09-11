@@ -4,7 +4,7 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 import React, { useState, useEffect } from "react";
 
 const InvitationSection = () => {
-  const weddingDate = new Date("2025-10-25T11:00:00"); // giống hình
+  const weddingDate = new Date("2025-10-26T11:00:00"); // giống hình
 
   const calculateTimeLeft = () => {
     const difference = +weddingDate - +new Date();
@@ -110,7 +110,7 @@ const InvitationSection = () => {
                             {day > 0 && day <= 31 ? (
                               <span
                                 className={`inline-block w-7 h-7 leading-7 rounded-full ${
-                                  day === 25
+                                  day === 26
                                     ? "bg-[#b18c85] text-white font-bold"
                                     : ""
                                 }`}
