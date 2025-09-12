@@ -11,7 +11,7 @@ const Snowfall = () => {
 
     const createSnowflake = () => {
       const snowflake = document.createElement("img");
-      snowflake.src = "/6.png";
+      snowflake.src = "/images/6.png";
       snowflake.className = "absolute z-10 animate-snow-fall";
       const size = Math.random() * 20 + 10;
       snowflake.style.width = `${size}px`;

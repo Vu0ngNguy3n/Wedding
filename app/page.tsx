@@ -3,6 +3,7 @@ import CoupleSection from "./home/components/CoupleSection";
 import DonateSection from "./home/components/DonateSection";
 import EventSection from "./home/components/EventSection";
 import Footer from "./home/components/Footer";
+import GallerySection from "./home/components/GallerySection";
 import HeroSection from "./home/components/HeroSection";
 import InvitationSection from "./home/components/InvitationSection";
 import Snowfall from "./home/components/Snowfall";
@@ -21,6 +22,7 @@ export default function Home() {
         <CoupleSection />
         <StorySection />
         <EventSection />
+        <GallerySection />
         <WishesSection />
         <DonateSection />
       </main>

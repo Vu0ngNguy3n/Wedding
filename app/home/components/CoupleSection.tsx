@@ -14,7 +14,7 @@ const CoupleSection = () => {
 
   const bride = {
     name: "Nguyễn Thị Nhung",
-    parents: ["Nguyễn Văn Cần", "Lê Thị Trúc"],
+    parents: ["Nguyễn Văn Phương", "Nguyễn Thị Hợp"],
     image:
       "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/92ed0e92080b2c6ad163031a39d67c96.jpeg",
     bio: "Nguyễn Nhung – cô gái dịu dàng, trong trẻo và ấm áp. Nụ cười của Nhung mang đến sự bình yên, khiến những khoảnh khắc bên cạnh trở nên ngọt ngào và đáng nhớ. Ẩn sau vẻ mong manh là một trái tim kiên định, luôn trân trọng và nâng niu những giá trị yêu thương. Hôm nay, Nhung hạnh phúc khi được trao trọn trái tim mình cho người bạn đời, cùng nhau viết tiếp câu chuyện tình yêu bền lâu và đầy hy vọng.",

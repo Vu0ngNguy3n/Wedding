@@ -39,7 +39,7 @@ const InvitationSection = () => {
   return (
     <section
       id="invitation"
-      className="py-20 lg:py-30 text-[#48332c] relative font-comfortaa"
+      className="py-20 lg:py-30 text-[#48332c] relative font-comfortaa overflow-x-hidden"
       style={{
         backgroundImage: "url(/images/bg.png)",
       }}

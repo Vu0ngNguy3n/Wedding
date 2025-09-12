@@ -41,7 +41,7 @@ const Header: React.FC = () => {
     { id: "story", label: "Chuyện tình yêu" },
     { id: "gallery", label: "Album Hình Cưới" },
     { id: "events", label: "Sự kiện cưới" },
-    { id: "wishes", label: "Sổ Lưu Bút" },
+    { id: "wishes", label: "Gửi lời chúc" },
     { id: "donate", label: "Mừng cưới" },
   ];
   return (
@@ -167,7 +167,7 @@ const Header: React.FC = () => {
         >
           <FaTimes className="text-2xl" />
         </button>
-        <div className="mt-12">
+        <div className="mt-12 font-comfortaa font-bold">
           <ul className="flex flex-col lg:flex-row">
             {navLinks.map((link) => (
               <li key={link.id}>
