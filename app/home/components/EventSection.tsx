@@ -3,58 +3,91 @@ import React from "react";
 const EventSection = () => {
   const events = [
     {
-      type: "Tiệc nhà gái",
-      date: "Ngày 25 tháng 10 năm 2025",
-      time: "18:00 (Thứ Sáu)",
-      location: "Nhà hàng Tiệc Cưới Bến Xưa",
-      address: "391/11 Bến Xưa, Q.12, TP.HCM",
-      googleMaps: "https://maps.app.goo.gl/9uT9wD5t3sF8V7tX8",
-      image:
-        "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/f8753d085600d11c05d761614915a31b.jpeg",
+      type: "Tiệc cưới nhà gái",
+      datetime: "16:00 25/10/2025",
+      location: "Tư gia nhà gái",
+      address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
+      googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
+      image: "/images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg",
     },
     {
-      type: "Tiệc nhà trai",
-      date: "Ngày 26 tháng 10 năm 2025",
-      time: "18:00 (Thứ Bảy)",
-      location: "Nhà hàng Tiệc Cưới Bến Xưa",
-      address: "391/11 Bến Xưa, Q.12, TP.HCM",
-      googleMaps: "https://maps.app.goo.gl/9uT9wD5t3sF8V7tX8",
-      image:
-        "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/f8753d085600d11c05d761614915a31b.jpeg",
+      type: "Tiệc cưới nhà trai",
+      datetime: "16:00 25/10/2025",
+      location: "Tư gia nhà gái",
+      address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
+      googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
+      image: "/images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg",
+    },
+    {
+      type: "Lễ vu quy",
+      datetime: "10:00 26/10/2025",
+      location: "Tư gia nhà gái",
+      address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
+      googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
+      image: "/images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg",
+    },
+    {
+      type: "Lễ thành hôn",
+      datetime: "11:00 26/10/2025",
+      location: "Tư gia nhà trai",
+      address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
+      googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
+      image: "/images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg",
     },
   ];
 
   return (
-    <section id="events" className="py-20 bg-white">
+    <section id="events" className="py-16 sm:py-20 bg-[#f9f5f2]">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-serif font-bold text-[#48332c] mb-4">
+        <div
+          className="h-[59px] w-[126px] bg-no-repeat bg-center bg-cover mx-auto"
+          style={{
+            backgroundImage: "url(/images/sec-title-flower.png)",
+          }}
+        ></div>
+        <h2 className="text-4xl font-dancing font-bold text-[#48332c] mb-2">
           Sự kiện cưới
         </h2>
-        <p className="text-gray-600 mb-12">
-          Hãy đến và chia sẻ niềm vui với chúng tôi.
+        <p className="text-gray-600 mb-12 italic text-sm sm:text-base">
+          ...tình yêu không phải là nhìn chằm chằm vào nhau, mà là nhìn cùng về
+          một hướng...
         </p>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {events.map((event, index) => (
-            <div key={index} className="bg-gray-100 p-8 rounded-lg shadow-lg">
-              <h3 className="text-3xl font-bold font-serif text-[#48332c] mb-2">
-                {event.type}
+            <div
+              key={index}
+              className="bg-white p-4 sm:p-5 rounded-xl shadow-lg flex flex-col items-center"
+            >
+              <img
+                src={event.image}
+                alt={event.type}
+                className="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-t-xl mb-4"
+              />
+              <h3 className="text-lg sm:text-xl font-bold text-[#48332c] mb-1 sm:mb-2 text-center">
+                {event.type.toUpperCase()}
               </h3>
-              <p className="text-lg text-gray-700 font-semibold">
-                {event.date}
+              <p className="text-gray-700 text-sm sm:text-base mb-1">
+                {event.datetime}
               </p>
-              <p className="text-lg text-gray-700">{event.time}</p>
-              <p className="text-lg text-gray-700 mt-4 font-bold">
+              <p className="text-gray-700 font-semibold text-sm sm:text-base text-center">
                 {event.location}
               </p>
-              <p className="text-gray-500 italic mb-4">{event.address}</p>
-              <a
-                href={event.googleMaps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 bg-[#48332c] text-white py-2 px-6 rounded-full hover:bg-white hover:text-[#48332c] border border-[#48332c] transition-colors"
-              >
-                Xem bản đồ
-              </a>
+              <p className="text-gray-500 italic text-xs sm:text-sm mb-4 text-center">
+                {event.address}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
+                <button className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors">
+                  Thêm vào lịch
+                </button>
+                <a
+                  href={event.googleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
+                >
+                  Xem bản đồ
+                </a>
+              </div>
             </div>
           ))}
         </div>

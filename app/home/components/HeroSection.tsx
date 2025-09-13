@@ -9,6 +9,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HeroSection = () => {
+  const bgImages = [
+    "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/35d7a501658092edbe48790bceea4976.jpg",
+    "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/fd2180c646086d62058e01883e30e07d.jpg",
+  ];
   return (
     <section
       id="home"
@@ -54,42 +58,17 @@ const HeroSection = () => {
         loop
         className="h-full z-50"
       >
-        <SwiperSlide>
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url(https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/35d7a501658092edbe48790bceea4976.jpg)",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url(https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/35d7a501658092edbe48790bceea4976.jpg)",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url(https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/35d7a501658092edbe48790bceea4976.jpg)",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url(https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/fd2180c646086d62058e01883e30e07d.jpg)",
-            }}
-          ></div>
-        </SwiperSlide>
+        {bgImages.map((url, index) => (
+          <SwiperSlide>
+            <div
+              className="w-full h-full bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${url})`,
+              }}
+            ></div>
+          </SwiperSlide>
+        ))}
+
         <div className="absolute inset-0 bg-black/30 pointer-events-none z-10"></div>
       </Swiper>
     </section>

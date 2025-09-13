@@ -45,13 +45,13 @@ const InvitationSection = () => {
       }}
     >
       <div
-        className="w-[150] h-[281] lg:w-[220] lg:h-[414] absolute left-0 -top-5 bg-no-repeat bg-center bg-cover z-1"
+        className="w-[150] h-[281] lg:w-[220] lg:h-[414] absolute left-0 -top-5 bg-no-repeat bg-center bg-cover z-1 pointer-events-none"
         style={{
           backgroundImage: "url(/images/invitation-left-img.png)",
         }}
       ></div>
       <div
-        className="w-[400] h-[580] absolute bottom-5 right-0 z-1"
+        className="w-[400] h-[580] absolute bottom-5 right-0 z-1 pointer-events-none"
         style={{
           backgroundImage: "url(/images/invitation-right-image.png)",
         }}
@@ -63,20 +63,23 @@ const InvitationSection = () => {
         >
           {/* Left box */}
           <div className="border-2 border-[#d2bdb7] p-4 lg:p-8 flex flex-col justify-center shadow-lg text-center gap-3 h-full">
-            <h2 className="text-5xl font-great-vibes italic mb-2">
+            <h2 className="text-3xl lg:text-5xl font-great-vibes italic mb-2">
               Save the Date
             </h2>
             <p className="text-gray-600 text-sm">For the wedding of</p>
-            <span className="text-3xl font-dancing font-bold text-[#202A41] my-2">
+            <span className="text-2xl lg:text-3xl font-dancing font-bold text-[#202A41] my-2">
               Lê Quốc & Nguyễn Nhung
             </span>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-sm lg:text-md">
               Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng tôi
               có thêm một niềm hạnh phúc!
             </p>
-            <button className="bg-[#b18c85] text-white px-6 py-3 rounded shadow hover:bg-[#48332c] transition">
+            <a
+              href="#wishes"
+              className="px-8 py-3 bg-[#c19a9a] text-white font-semibold rounded-md hover:bg-[#a97f7f] transition flex items-center justify-center gap-2 mx-auto"
+            >
               Gửi lời chúc →
-            </button>
+            </a>
           </div>
         </AnimatedSection>
         <AnimatedSection
@@ -108,15 +111,29 @@ const InvitationSection = () => {
                         return (
                           <td key={col} className="py-1">
                             {day > 0 && day <= 31 ? (
-                              <span
-                                className={`inline-block w-7 h-7 leading-7 rounded-full ${
-                                  day === 26
-                                    ? "bg-[#b18c85] text-white font-bold"
-                                    : ""
+                              <div
+                                className={`relative inline-flex items-center justify-center w-8 h-8 ${
+                                  day === 26 ? "text-white font-bold" : ""
                                 }`}
                               >
-                                {day}
-                              </span>
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  className={`absolute w-8 h-8 ${
+                                    day === 26
+                                      ? "fill-[#b18c85]"
+                                      : "fill-transparent"
+                                  }`}
+                                >
+                                  <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+             2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09 
+             C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 
+             22 8.5c0 3.78-3.4 6.86-8.55 
+             11.54L12 21.35z"
+                                  />
+                                </svg>
+                                <span className="relative z-10">{day}</span>
+                              </div>
                             ) : (
                               ""
                             )}

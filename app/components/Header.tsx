@@ -31,6 +31,18 @@ const Header: React.FC = () => {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isNavOpen]);
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
@@ -39,8 +51,8 @@ const Header: React.FC = () => {
   const navLinks = [
     { id: "couple", label: "Cặp đôi" },
     { id: "story", label: "Chuyện tình yêu" },
-    { id: "gallery", label: "Album Hình Cưới" },
     { id: "events", label: "Sự kiện cưới" },
+    { id: "gallery", label: "Album Hình Cưới" },
     { id: "wishes", label: "Gửi lời chúc" },
     { id: "donate", label: "Mừng cưới" },
   ];
@@ -157,7 +169,7 @@ const Header: React.FC = () => {
         ></div>
       )}
       <div
-        className={`fixed top-0 right-0 h-screen w-64 z-52 bg-white p-6 transform transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 h-screen w-64 z-52 bg-white transform transition-transform duration-300 lg:hidden ${
           isNavOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -167,13 +179,17 @@ const Header: React.FC = () => {
         >
           <FaTimes className="text-2xl" />
         </button>
-        <div className="mt-12 font-comfortaa font-bold">
-          <ul className="flex flex-col lg:flex-row">
+        <div className="mt-12 font-comfortaa">
+          <ul className="flex flex-col lg:flex-row  ">
             {navLinks.map((link) => (
-              <li key={link.id}>
+              <li
+                key={link.id}
+                className="border-b border-gray-200"
+                onClick={toggleNav}
+              >
                 <a
                   href={`#${link.id}`}
-                  className="block py-2 px-4 hover:text-red-500 transition-colors"
+                  className="block py-2 px-5 hover:text-red-500 transition-colors"
                 >
                   {link.label}
                 </a>

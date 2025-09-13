@@ -1,39 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ImageViewer from "@/app/components/ImageViewer";
 
-const images = [
-  "/images/gallery/small_1.jpg",
-  "/images/gallery/small_2.jpg",
-  "/images/gallery/small_3.jpg",
-  "/images/gallery/small_4.jpg",
-  "/images/gallery/small_1.jpg",
-  "/images/gallery/small_2.jpg",
-  "/images/gallery/small_3.jpg",
-  "/images/gallery/small_4.jpg",
-  "/images/gallery/small_1.jpg",
-  "/images/gallery/small_2.jpg",
-  "/images/gallery/small_3.jpg",
-  "/images/gallery/small_4.jpg",
-  "/images/gallery/small_1.jpg",
-  "/images/gallery/small_2.jpg",
-  "/images/gallery/small_3.jpg",
-  "/images/gallery/small_4.jpg",
-  "/images/gallery/small_1.jpg",
-  "/images/gallery/small_2.jpg",
-  "/images/gallery/small_3.jpg",
-  "/images/gallery/small_4.jpg",
-];
-
 const GallerySection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const openViewer = (index: number) => {
     setCurrentIndex(index);
     setIsOpen(true);
   };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    fetch("/api/get-image-gallery")
+      .then((res) => res.json())
+      .then((data) => setImageUrls(data));
+  }, []);
   return (
     <section id="gallery" className="py-10 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -56,7 +51,7 @@ const GallerySection = () => {
 
         {/* Masonry Layout */}
         <div className="columns-2 md:columns-3 gap-4 space-y-4">
-          {images.slice(0, 6).map((src, idx) => (
+          {imageUrls.slice(0, 6).map((src, idx) => (
             <div key={idx} className="overflow-hidden rounded-lg">
               <Image
                 src={src}
@@ -70,7 +65,7 @@ const GallerySection = () => {
           ))}
           {isOpen && (
             <ImageViewer
-              images={images}
+              images={imageUrls}
               currentIndex={currentIndex}
               onClose={() => setIsOpen(false)}
             />
@@ -80,7 +75,7 @@ const GallerySection = () => {
         {/* Nút xem thêm */}
         <div className="text-center mt-8">
           <button
-            className="px-6 py-2 bg-pink-200 text-pink-800 rounded-full hover:bg-pink-300 transition"
+            className="px-6 py-2 bg-[#b18c85] text-white rounded-full hover:bg-[#a97f7f] transition"
             onClick={() => {
               setIsOpen(true);
               setCurrentIndex(0);

@@ -30,7 +30,7 @@ function AnimatedSection({
   children,
   animationType = "fade-in-up",
   threshold = 0.5, // Mức độ phần trăm của phần tử hiển thị trong viewport để kích hoạt hiệu ứng
-  triggerOnce = false, // Chỉ kích hoạt hiệu ứng một lần khi phần tử vào viewport
+  triggerOnce = true, // Chỉ kích hoạt hiệu ứng một lần khi phần tử vào viewport
   className,
 }: AnimatedSectionProps) {
   const { ref, inView } = useInView({

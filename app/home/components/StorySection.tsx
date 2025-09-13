@@ -23,13 +23,13 @@ const StorySection = () => {
     },
     {
       title: "Hẹn ước",
-      text: "Từ một lần rep story đến những tháng ngày trò chuyện, giờ đây họ mang trong tim mong ước được gặp nhau, nắm tay nhau ngoài đời và cùng viết tiếp câu chuyện chưa có hồi kết.",
+      text: "Từ một lần rep story đến những tháng ngày trò chuyện, giờ đây họ mang trong tim mong ước được gặp nhau, nắm tay nhau và cùng viết tiếp câu chuyện chưa có hồi kết.",
     },
   ];
 
   return (
-    <section id="couple" className="py-10 lg:py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="story" className="py-10 lg:py-20">
+      <div className="container mx-auto max-w-5xl px-4  bg-white">
         <div className="text-center mb-12">
           <div
             className="h-[59px] w-[126px] bg-no-repeat bg-center bg-cover mx-auto"
@@ -49,7 +49,7 @@ const StorySection = () => {
         {/* Timeline */}
         <div className="relative">
           {/* line timeline */}
-          <div className="absolute left-1/2 top-0 h-full w-1 bg-pink-200 transform -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-[#b18c85] transform -translate-x-1/2"></div>
 
           <div className="space-y-16">
             {defaultStages.map((s, i) => (
@@ -65,12 +65,12 @@ const StorySection = () => {
               >
                 {/* Dot */}
                 <div className="absolute left-1/2 top-4 transform -translate-x-1/2">
-                  <div className="w-5 h-5 bg-pink-500 rounded-full border-4 border-white shadow"></div>
+                  <div className="w-5 h-5 bg-[#b18c85] rounded-full border-4 border-white shadow"></div>
                 </div>
 
                 {/* Nội dung */}
-                <div className="w-full md:w-5/12 bg-white p-6 rounded-xl shadow-md border">
-                  <h3 className="text-lg font-semibold text-pink-600">
+                <div className="w-full md:w-5/12 bg-white p-6 rounded-xl shadow-md border-1 border-[#b18c85]">
+                  <h3 className="text-lg font-semibold text-[#b18c85]">
                     {s.title}
                   </h3>
                   <p className="mt-2 text-gray-600 text-sm">{s.text}</p>

@@ -9,7 +9,7 @@ const CoupleSection = () => {
     parents: ["Lê Văn Thịnh", "Phạm Thị Khảm"],
     image:
       "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/1bad1de041c955b5cee90092ebc9fc5b.jpeg",
-    bio: "Lê Quốc – chàng trai IT trầm lặng nhưng giàu nhiệt huyết. Ngày thường, Quốc vẫn miệt mài với thế giới công nghệ, nhưng sâu trong tim lại là một người luôn hướng về mái ấm giản dị và chan chứa yêu thương. Đằng sau sự điềm tĩnh ấy là một trái tim chân thành, khát khao sẻ chia và đồng hành. Hôm nay, Quốc hạnh phúc khi được cùng người con gái mình thương bước vào hành trình hôn nhân, dựng xây nên một tổ ấm vẹn tròn.",
+    bio: "Ai bảo IT chỉ biết code? Lê Quốc đã chứng minh rằng, phía sau bàn phím và những dòng lệnh khô khan là một trái tim luôn chan chứa yêu thương. Không chỉ giỏi viết code, anh còn “debug” được chính trái tim mình để tìm ra tình yêu đích thực. Và hôm nay, Quốc chính thức “commit” cuộc đời mình với người con gái anh thương – một “project” không có deadline, không có bug, chỉ có hạnh phúc và đồng hành. Đó là dự án lớn nhất, đẹp nhất đời anh – hành trình hôn nhân, nơi cả hai cùng dựng xây một tổ ấm vẹn tròn, đầy ắp yêu thương.",
   };
 
   const bride = {
@@ -17,7 +17,7 @@ const CoupleSection = () => {
     parents: ["Nguyễn Văn Phương", "Nguyễn Thị Hợp"],
     image:
       "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/92ed0e92080b2c6ad163031a39d67c96.jpeg",
-    bio: "Nguyễn Nhung – cô gái dịu dàng, trong trẻo và ấm áp. Nụ cười của Nhung mang đến sự bình yên, khiến những khoảnh khắc bên cạnh trở nên ngọt ngào và đáng nhớ. Ẩn sau vẻ mong manh là một trái tim kiên định, luôn trân trọng và nâng niu những giá trị yêu thương. Hôm nay, Nhung hạnh phúc khi được trao trọn trái tim mình cho người bạn đời, cùng nhau viết tiếp câu chuyện tình yêu bền lâu và đầy hy vọng.",
+    bio: "Nguyễn Nhung – một cô gái dịu dàng, trong sáng và tràn đầy hơi ấm. Nụ cười của Nhung như thắp sáng mọi khoảnh khắc, mang đến sự bình yên và những rung cảm ngọt ngào khó quên. Dưới vẻ ngoài mong manh ấy là một trái tim mạnh mẽ, biết trân trọng và nâng niu từng giá trị yêu thương. Hôm nay, Nhung rạng rỡ trong hạnh phúc, trao trọn trái tim mình cho người bạn đời, cùng nhau viết tiếp những chương đầy yêu thương, hy vọng và hạnh phúc bền lâu.",
   };
 
   return (
