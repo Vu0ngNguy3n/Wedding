@@ -16,7 +16,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full lg:h-[calc(100dvh-149px)] h-[calc(100dvh-129px)]"
+      className="relative w-full lg:h-[calc(100vh-149px)] h-[calc(100vh-129px)]"
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4 pointer-events-none">
         <motion.div

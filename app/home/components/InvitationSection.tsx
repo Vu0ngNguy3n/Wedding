@@ -8,27 +8,27 @@ const InvitationSection = () => {
 
   const calculateTimeLeft = () => {
     const difference = +weddingDate - +new Date();
-    let timeLeft = {} as {
-      days: number;
-      hours: number;
-      minutes: number;
-      seconds: number;
-    };
-
     if (difference > 0) {
-      timeLeft = {
+      return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-    return timeLeft;
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // ⚡ Ban đầu null để SSR/CSR khớp
+  const [timeLeft, setTimeLeft] = useState<{
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+  } | null>(null);
 
   useEffect(() => {
+    setTimeLeft(calculateTimeLeft()); // tính lần đầu sau khi client mount
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -148,30 +148,32 @@ const InvitationSection = () => {
 
             {/* Countdown */}
             <div className="flex justify-center gap-6 font-dancing text-[#b18c85]">
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold">
-                  {timeLeft.days ?? "00"}
-                </span>
-                <span className="text-sm">Ngày</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold">
-                  {timeLeft.hours ?? "00"}
-                </span>
-                <span className="text-sm">Giờ</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold">
-                  {timeLeft.minutes ?? "00"}
-                </span>
-                <span className="text-sm">Phút</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold">
-                  {timeLeft.seconds ?? "00"}
-                </span>
-                <span className="text-sm">Giây</span>
-              </div>
+              {timeLeft ? (
+                <>
+                  <div className="flex flex-col items-center">
+                    <span className="text-3xl font-bold">{timeLeft.days}</span>
+                    <span className="text-sm">Ngày</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-3xl font-bold">{timeLeft.hours}</span>
+                    <span className="text-sm">Giờ</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-3xl font-bold">
+                      {timeLeft.minutes}
+                    </span>
+                    <span className="text-sm">Phút</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-3xl font-bold">
+                      {timeLeft.seconds}
+                    </span>
+                    <span className="text-sm">Giây</span>
+                  </div>
+                </>
+              ) : (
+                <span className="text-gray-400">Đang tải...</span>
+              )}
             </div>
           </div>
         </AnimatedSection>

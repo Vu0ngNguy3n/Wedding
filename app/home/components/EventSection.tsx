@@ -1,10 +1,13 @@
+"use client";
 import React from "react";
+import { AddToCalendarButton, atcb_action } from "add-to-calendar-button-react";
 
 const EventSection = () => {
   const events = [
     {
       type: "Tiệc cưới nhà gái",
-      datetime: "16:00 25/10/2025",
+      datetime: "2025-10-25T16:00:00",
+      endtime: "2025-10-25T18:00:00",
       location: "Tư gia nhà gái",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
@@ -12,15 +15,17 @@ const EventSection = () => {
     },
     {
       type: "Tiệc cưới nhà trai",
-      datetime: "16:00 25/10/2025",
-      location: "Tư gia nhà gái",
+      datetime: "2025-10-25T16:00:00",
+      endtime: "2025-10-25T18:00:00",
+      location: "Tư gia nhà trai",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
       image: "/images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg",
     },
     {
       type: "Lễ vu quy",
-      datetime: "10:00 26/10/2025",
+      datetime: "2025-10-26T10:00:00",
+      endtime: "2025-10-26T11:00:00",
       location: "Tư gia nhà gái",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
@@ -28,7 +33,8 @@ const EventSection = () => {
     },
     {
       type: "Lễ thành hôn",
-      datetime: "11:00 26/10/2025",
+      datetime: "2025-10-26T11:00:00",
+      endtime: "2025-10-26T12:00:00",
       location: "Tư gia nhà trai",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
@@ -67,7 +73,7 @@ const EventSection = () => {
                 {event.type.toUpperCase()}
               </h3>
               <p className="text-gray-700 text-sm sm:text-base mb-1">
-                {event.datetime}
+                {new Date(event.datetime).toLocaleString("vi-VN")}
               </p>
               <p className="text-gray-700 font-semibold text-sm sm:text-base text-center">
                 {event.location}
@@ -75,15 +81,36 @@ const EventSection = () => {
               <p className="text-gray-500 italic text-xs sm:text-sm mb-4 text-center">
                 {event.address}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
-                <button className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors">
+              <div className="flex flex-col gap-3 w-full">
+                <button
+                  onClick={() =>
+                    atcb_action({
+                      name: event.type,
+                      startDate: event.datetime.split("T")[0],
+                      startTime: event.datetime.split("T")[1],
+                      endDate: event.endtime.split("T")[0],
+                      endTime: event.endtime.split("T")[1],
+                      location: `${event.location}, ${event.address}`,
+                      options: [
+                        "Apple",
+                        "Google",
+                        "iCal",
+                        "Microsoft365",
+                        "Outlook.com",
+                        "Yahoo",
+                      ],
+                      language: "vi",
+                    })
+                  }
+                  className="flex-1 w-full px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
+                >
                   Thêm vào lịch
                 </button>
                 <a
                   href={event.googleMaps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
+                  className="flex-1 w-full px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
                 >
                   Xem bản đồ
                 </a>

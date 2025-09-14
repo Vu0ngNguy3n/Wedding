@@ -23,7 +23,7 @@ const StorySection = () => {
     },
     {
       title: "Hẹn ước",
-      text: "Từ một lần rep story đến những tháng ngày trò chuyện, giờ đây họ mang trong tim mong ước được gặp nhau, nắm tay nhau và cùng viết tiếp câu chuyện chưa có hồi kết.",
+      text: "Từ một lần rep story đến những tháng ngày trò chuyện, giờ đây họ được gặp nhau, nắm tay nhau và cùng viết tiếp câu chuyện chưa có hồi kết.",
     },
   ];
 

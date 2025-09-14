@@ -42,6 +42,46 @@ body {
   font-family: "Great Vibes", cursive;
 }
 
+/* Custom style cho AddToCalendarButton */
+
+/* Nút chính */
+.atcb-button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #c19a9a;
+  color: #48332c;
+  border-radius: 9999px; /* bo tròn full */
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  background: white;
+}
+
+.atcb-button:hover {
+  background-color: #48332c;
+  color: #fff;
+}
+
+/* Dropdown menu */
+.atcb-list {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.atcb-list-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.atcb-list-item:hover {
+  background: #f3f4f6; /* bg-gray-100 */
+}
+
 @keyframes snow-fall {
   0% {
     transform: translate(0vw, -100%);
