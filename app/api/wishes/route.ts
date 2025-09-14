@@ -1,12 +1,11 @@
-import fs from "fs";
-import path from "path";
 import { NextResponse } from "next/server";
-
-const filePath = path.join(process.cwd(), "data", "wishes.json");
+import db, { Wish } from "@/lib/db";
 
 export async function GET() {
-  const data = fs.readFileSync(filePath, "utf-8");
-  return NextResponse.json(JSON.parse(data));
+  const rows = db
+    .prepare<[], Wish>("SELECT * FROM wishes ORDER BY id DESC")
+    .all();
+  return NextResponse.json(rows);
 }
 
 export async function POST(req: Request) {
@@ -16,10 +15,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Thiếu thông tin" }, { status: 400 });
   }
 
-  const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  data.unshift({ name, message });
-
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  db.prepare("INSERT INTO wishes (name, message) VALUES (?, ?)").run(
+    name,
+    message
+  );
 
   return NextResponse.json({ success: true });
 }
