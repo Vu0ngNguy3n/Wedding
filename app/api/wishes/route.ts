@@ -1,11 +1,14 @@
+import { Redis } from "@upstash/redis";
 import { NextResponse } from "next/server";
-import db, { Wish } from "@/lib/db";
+
+// Khởi tạo Redis từ env
+const redis = Redis.fromEnv();
+
+type Wish = { name: string; message: string };
 
 export async function GET() {
-  const rows = db
-    .prepare<[], Wish>("SELECT * FROM wishes ORDER BY id DESC")
-    .all();
-  return NextResponse.json(rows);
+  const wishes = (await redis.get<Wish[]>("wishes")) || [];
+  return NextResponse.json(wishes);
 }
 
 export async function POST(req: Request) {
@@ -15,10 +18,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Thiếu thông tin" }, { status: 400 });
   }
 
-  db.prepare("INSERT INTO wishes (name, message) VALUES (?, ?)").run(
-    name,
-    message
-  );
+  // Lấy danh sách hiện tại từ Redis
+  const wishes = (await redis.get<Wish[]>("wishes")) || [];
+  wishes.unshift({ name, message });
+
+  // Lưu lại
+  await redis.set("wishes", wishes);
 
   return NextResponse.json({ success: true });
 }
