@@ -44,6 +44,30 @@ body {
 
 /* Custom style cho AddToCalendarButton */
 
+@keyframes shake {
+  0%,
+  91%,
+  100% {
+    transform: translateX(0);
+  }
+  92% {
+    transform: translateX(-3px);
+  }
+  94% {
+    transform: translateX(3px);
+  }
+  96% {
+    transform: translateX(-3px);
+  }
+  98% {
+    transform: translateX(3px);
+  }
+}
+
+.shake {
+  animation: shake 5.5s ease-in-out infinite;
+}
+
 /* Nút chính */
 .atcb-button {
   width: 100%;

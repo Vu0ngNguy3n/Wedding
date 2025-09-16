@@ -34,7 +34,7 @@ export default function BackgroundMusic() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <>
       <audio ref={audioRef} loop>
         <source src="/music/I-Do-911.mp3" type="audio/mpeg" />
       </audio>
@@ -45,6 +45,6 @@ export default function BackgroundMusic() {
       >
         {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
-    </div>
+    </>
   );
 }

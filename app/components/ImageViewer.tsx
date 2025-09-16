@@ -171,8 +171,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
       >
         {images.map((src, idx) => {
           // random animation cho mỗi lần mount slide
-          const anim =
-            animations[Math.floor(Math.random() * animations.length)];
+          const anim = animations[2];
 
           return (
             <SwiperSlide
@@ -184,10 +183,10 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
                   key={idx + "-" + Math.random()} // ép remount để random lại khi slide hiển thị
                   src={src}
                   alt={`image-${idx}`}
-                  initial={anim.initial}
-                  animate={anim.animate}
+                  // initial={anim.initial}
+                  // animate={anim.animate}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg object-contain"
+                  className="h-full w-full rounded-lg shadow-lg object-contain"
                 />
               </div>
             </SwiperSlide>
