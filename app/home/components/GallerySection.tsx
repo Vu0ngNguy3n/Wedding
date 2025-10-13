@@ -29,7 +29,6 @@ const GallerySection = () => {
       .then((res) => res.json())
       .then((data) => {
         setImageUrls(data);
-        console.log("data :>> ", data);
       });
   }, []);
   return (
