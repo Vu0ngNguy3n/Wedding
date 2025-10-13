@@ -27,7 +27,10 @@ const GallerySection = () => {
   useEffect(() => {
     fetch("/api/get-image-gallery")
       .then((res) => res.json())
-      .then((data) => setImageUrls(data));
+      .then((data) => {
+        setImageUrls(data);
+        console.log("data :>> ", data);
+      });
   }, []);
   return (
     <section id="gallery" className="py-10 lg:py-20 bg-white">

@@ -11,7 +11,7 @@ const EventSection = () => {
       location: "Tư gia nhà gái",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
-      image: "/images/gallery/8.jpg",
+      image: "/images/gallery/ev1.jpg",
     },
     {
       type: "Tiệc cưới nhà trai",
@@ -20,7 +20,7 @@ const EventSection = () => {
       location: "Tư gia nhà trai",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
-      image: "/images/gallery/2.jpg",
+      image: "/images/gallery/ev2.jpg",
     },
     {
       type: "Lễ vu quy",
@@ -29,7 +29,7 @@ const EventSection = () => {
       location: "Tư gia nhà gái",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/u2vsDG7a81joSKQm6",
-      image: "/images/gallery/10.jpg",
+      image: "/images/gallery/ev3.jpg",
     },
     {
       type: "Lễ thành hôn",
@@ -38,7 +38,7 @@ const EventSection = () => {
       location: "Tư gia nhà trai",
       address: "Thôn Nội, Xã Vĩnh An, Tỉnh Phú Thọ",
       googleMaps: "https://maps.app.goo.gl/NPgkPyTssY8UZgD6A",
-      image: "/images/gallery/4.JPG",
+      image: "/images/gallery/ev4.jpg",
     },
   ];
 
