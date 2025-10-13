@@ -51,18 +51,21 @@ const GallerySection = () => {
 
         {/* Masonry Layout */}
         <div className="columns-2 md:columns-3 gap-4 space-y-4">
-          {imageUrls.slice(0, 6).map((src, idx) => (
-            <div key={idx} className="overflow-hidden rounded-lg">
-              <Image
-                src={src}
-                alt={`Gallery ${idx + 1}`}
-                width={600}
-                height={800}
-                className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-500"
-                onClick={() => openViewer(idx)}
-              />
-            </div>
-          ))}
+          {[...imageUrls]
+            // .sort(() => Math.random() - 0.5)
+            .slice(0, 9)
+            .map((src, idx) => (
+              <div key={idx} className="overflow-hidden rounded-lg">
+                <Image
+                  src={src}
+                  alt={`Gallery ${idx + 1}`}
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-500"
+                  onClick={() => openViewer(idx)}
+                />
+              </div>
+            ))}
           {isOpen && (
             <ImageViewer
               images={imageUrls}

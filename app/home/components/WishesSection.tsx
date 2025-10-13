@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const WishesSection = () => {
   const [wishes, setWishes] = useState<{ name: string; message: string }[]>([]);
   const [relation, setRelation] = useState("");
-  const [customRelation, setCustomRelation] = useState("");
+  // const [customRelation, setCustomRelation] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -21,20 +21,20 @@ const WishesSection = () => {
 
   // Gửi lời chúc
   const sendWish = async () => {
-    const finalRelation = relation === "Khác" ? customRelation : relation;
-    if (!finalRelation || !name || !message)
-      return alert("Nhập đủ thông tin nhé!");
+    // const finalRelation = relation === "Khác" ? customRelation : relation;
+    // if (!finalRelation || !name || !message)
+    //   return alert("Nhập đủ thông tin nhé!");
 
-    const finalName = `${finalRelation} ${name}`; // gộp quan hệ + tên
+    // const finalName = `${finalRelation} ${name}`; // gộp quan hệ + tên
 
     await fetch("/api/wishes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: finalName, message }),
+      body: JSON.stringify({ name, message }),
     });
 
     setRelation("");
-    setCustomRelation("");
+    // setCustomRelation("");
     setName("");
     setMessage("");
 
@@ -99,7 +99,7 @@ const WishesSection = () => {
               }}
             >
               {/* Quan hệ */}
-              <select
+              {/* <select
                 className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c19a9a]"
                 value={relation}
                 onChange={(e) => setRelation(e.target.value)}
@@ -119,10 +119,10 @@ const WishesSection = () => {
                 <option value="Bạn">Bạn</option>
                 <option value="Đồng nghiệp">Đồng nghiệp</option>
                 <option value="Khác">Khác</option>
-              </select>
+              </select> */}
 
               {/* Quan hệ khác */}
-              {relation === "Khác" && (
+              {/* {relation === "Khác" && (
                 <input
                   type="text"
                   placeholder="Nhập danh xưng của bạn*"
@@ -130,7 +130,7 @@ const WishesSection = () => {
                   value={customRelation}
                   onChange={(e) => setCustomRelation(e.target.value)}
                 />
-              )}
+              )} */}
 
               {/* Họ tên */}
               <input

@@ -4,7 +4,7 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 import React, { useState, useEffect } from "react";
 
 const InvitationSection = () => {
-  const weddingDate = new Date("2025-10-26T11:00:00"); // giống hình
+  const weddingDate = new Date("2025-10-25T00:00:00"); // giống hình
 
   const calculateTimeLeft = () => {
     const difference = +weddingDate - +new Date();
@@ -113,13 +113,15 @@ const InvitationSection = () => {
                             {day > 0 && day <= 31 ? (
                               <div
                                 className={`relative inline-flex items-center justify-center w-8 h-8 ${
-                                  day === 26 ? "text-white font-bold" : ""
+                                  day === 26 || day === 25
+                                    ? "text-white font-bold"
+                                    : ""
                                 }`}
                               >
                                 <svg
                                   viewBox="0 0 24 24"
                                   className={`absolute w-8 h-8 ${
-                                    day === 26
+                                    day === 26 || day === 25
                                       ? "fill-[#b18c85]"
                                       : "fill-transparent"
                                   }`}

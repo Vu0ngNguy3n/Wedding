@@ -9,10 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HeroSection = () => {
-  const bgImages = [
-    "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/35d7a501658092edbe48790bceea4976.jpg",
-    "https://cdn.biihappy.com/ziiweb/website/68a8232f1d37106a65000d60/templates/6174ef83a62963738e0a367c/fd2180c646086d62058e01883e30e07d.jpg",
-  ];
+  const bgImages = ["/images/hero/TD_00350_1.JPG", "/images/hero/8.jpg"];
   return (
     <section
       id="home"

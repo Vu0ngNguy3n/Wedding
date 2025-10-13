@@ -26,7 +26,7 @@ const Snowfall = () => {
       }, 10000);
     };
 
-    const interval = setInterval(createSnowflake, 300);
+    const interval = setInterval(createSnowflake, 1000);
 
     return () => clearInterval(interval);
   }, []);

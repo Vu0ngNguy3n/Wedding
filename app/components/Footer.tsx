@@ -15,10 +15,10 @@ const Footer = () => {
           }}
         >
           <img
-            src="images/ff8579f5d01fb20660f75dcdb4acdbf4.jpeg"
+            src="/images/footer/TD_00303_1.JPG"
             className="absolute max-w-[75%] rounded-full left-[48%] top-[44%] 
              -translate-x-1/2 -translate-y-1/2"
-            alt="Trọng Cường &amp; Quỳnh Trâm Wedding site!"
+            alt="Lê Quốc &amp; Nguyễn Nhung Wedding site!"
           />
         </div>
         <h2 className="font-dancing text-5xl lg:text-7xl">Thank you!</h2>

@@ -24,6 +24,7 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import "swiper/css/zoom";
+import Image from "next/image";
 
 type ImageViewerProps = {
   images: string[];
@@ -170,24 +171,30 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
         className="w-full max-w-5xl flex-1 flex items-center"
       >
         {images.map((src, idx) => {
-          // random animation cho mỗi lần mount slide
           const anim = animations[2];
-
           return (
             <SwiperSlide
               key={idx}
               className="flex justify-center items-center h-full w-full"
             >
               <div className="swiper-zoom-container flex justify-center items-center h-full w-full">
-                <motion.img
-                  key={idx + "-" + Math.random()} // ép remount để random lại khi slide hiển thị
-                  src={src}
-                  alt={`image-${idx}`}
-                  // initial={anim.initial}
-                  // animate={anim.animate}
+                <motion.div
+                  initial={anim.initial}
+                  animate={anim.animate}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="h-full w-full rounded-lg shadow-lg object-contain"
-                />
+                  className="h-full w-full flex justify-center items-center"
+                >
+                  <Image
+                    src={src}
+                    alt={`image-${idx}`}
+                    width={900}
+                    height={600}
+                    quality={60}
+                    loading="lazy"
+                    priority={false}
+                    className="h-full w-full rounded-lg shadow-lg object-contain"
+                  />
+                </motion.div>
               </div>
             </SwiperSlide>
           );
@@ -213,9 +220,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
       >
         {images.map((src, idx) => (
           <SwiperSlide key={idx} className="cursor-pointer">
-            <img
+            <Image
               src={src}
+              loading="lazy"
               alt={`thumb-${idx}`}
+              width={120}
+              height={80}
               className="w-full h-20 object-cover rounded-md border-3 border-transparent transition-all duration-300"
             />
           </SwiperSlide>
