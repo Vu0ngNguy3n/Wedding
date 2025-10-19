@@ -5,7 +5,8 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   // Lấy path đến folder images trong public
-  const imagesDir = path.join(process.cwd(), "public/images/gallery");
+  const imagesDir = path.join(process.cwd(), "public/photo");
+  // const imagesDir = path.join(process.cwd(), "public/images/gallery");
 
   // Đọc tất cả file trong folder
   const files = fs.readdirSync(imagesDir);
@@ -16,7 +17,8 @@ export async function GET() {
   );
 
   // Tạo URL public
-  const imageUrls = imageFiles.map((file) => `/images/gallery/${file}`);
+  // const imageUrls = imageFiles.map((file) => `/images/gallery/${file}`);
+  const imageUrls = imageFiles.map((file) => `/photo/${file}`);
 
   return NextResponse.json(imageUrls);
 }
