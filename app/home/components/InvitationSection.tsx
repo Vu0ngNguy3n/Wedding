@@ -4,7 +4,7 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 import React, { useState, useEffect } from "react";
 
 const InvitationSection = () => {
-  const weddingDate = new Date("2025-10-25T00:00:00"); // giống hình
+  const weddingDate = new Date("2025-11-16T11:00:00"); // giống hình
 
   const calculateTimeLeft = () => {
     const difference = +weddingDate - +new Date();
@@ -90,11 +90,11 @@ const InvitationSection = () => {
           <div className="border-2 border-[#d2bdb7] p-4 lg:p-8 shadow-lg flex flex-col justify-between w-full h-full">
             {/* Calendar mockup */}
             <div className="text-center mb-6">
-              <h3 className="font-bold mb-2">OCTOBER / 2025</h3>
+              <h3 className="font-bold mb-2">NOVEMBER / 2025</h3>
               <table className="w-full text-sm text-gray-700">
                 <thead>
                   <tr className="border-b">
-                    {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                    {[ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
                       (d) => (
                         <th key={d} className="py-1 font-medium">
                           {d}
@@ -107,13 +107,13 @@ const InvitationSection = () => {
                   {[...Array(5)].map((_, row) => (
                     <tr key={row} className="text-center">
                       {[...Array(7)].map((_, col) => {
-                        const day = row * 7 + col - 2; // adjust offset
+                        const day = row * 7 + col - 4; // adjust offset
                         return (
                           <td key={col} className="py-1">
                             {day > 0 && day <= 31 ? (
                               <div
                                 className={`relative inline-flex items-center justify-center w-8 h-8 ${
-                                  day === 26 || day === 25
+                                  day === 13 || day === 16
                                     ? "text-white font-bold"
                                     : ""
                                 }`}
@@ -121,7 +121,7 @@ const InvitationSection = () => {
                                 <svg
                                   viewBox="0 0 24 24"
                                   className={`absolute w-8 h-8 ${
-                                    day === 26 || day === 25
+                                    day === 13 || day === 16
                                       ? "fill-[#b18c85]"
                                       : "fill-transparent"
                                   }`}

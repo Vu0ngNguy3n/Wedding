@@ -43,7 +43,7 @@ const HeroSection = () => {
           className="pointer-events-none"
         >
           <span className="text-xs md:text-lg font-comfortaa text-white">
-            26 Tháng 10 2025
+            16 Tháng 11 2025
           </span>
         </motion.div>
       </div>
