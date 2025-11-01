@@ -15,7 +15,7 @@ const Footer = () => {
           }}
         >
           <img
-            src="/images/footer/cr1.JPG"
+            src="/images/footer/cr1.jpg"
             className="absolute max-w-[100%] h-[80%] rounded-full left-[48%] top-[44%] 
              -translate-x-1/2 -translate-y-1/2"
             alt="Quốc Hùng &amp; Thùy Trang Wedding site!"
