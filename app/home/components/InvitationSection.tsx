@@ -68,7 +68,7 @@ const InvitationSection = () => {
             </h2>
             <p className="text-gray-600 text-sm">For the wedding of</p>
             <span className="text-2xl lg:text-3xl font-dancing font-bold text-[#202A41] my-2">
-              Lê Quốc & Nguyễn Nhung
+              Quốc Hùng & Thùy Trang
             </span>
             <p className="text-gray-600 mb-6 text-sm lg:text-md">
               Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng tôi

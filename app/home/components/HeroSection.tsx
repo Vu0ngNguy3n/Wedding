@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HeroSection = () => {
-  const bgImages = ["/images/hero/TD_00350_1.JPG", "/images/hero/8.jpg"];
+  const bgImages = ["/images/hero/aiImg.png", "/images/hero/aiImg.png"];
   return (
     <section
       id="home"
@@ -22,7 +22,7 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-6 w-full text-4xl md:text-7xl text-white flex flex-col lg:flex-row items-center gap-3 drop-shadow-lg pointer-events-none"
         >
-          <span className="font-dancing flex-1  text-right">Lê Quốc</span>
+          <span className="font-dancing flex-1  text-right">Quốc Hùng</span>
           <motion.div
             animate={{ scale: [1, 1.3, 1] }}
             transition={{
@@ -33,7 +33,7 @@ const HeroSection = () => {
           >
             <FaHeart className="text-pink-400 w-9 h-9" />
           </motion.div>
-          <span className="font-dancing flex-1 text-left">Nguyễn Nhung</span>
+          <span className="font-dancing flex-1 text-left">Thùy Trang</span>
         </motion.div>
 
         <motion.div
@@ -58,7 +58,7 @@ const HeroSection = () => {
         {bgImages.map((url, index) => (
           <SwiperSlide>
             <div
-              className="w-full h-full bg-cover bg-center"
+              className="w-full h-full bg-cover bg-top"
               style={{
                 backgroundImage: `url(${url})`,
               }}

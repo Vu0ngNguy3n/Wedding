@@ -61,7 +61,7 @@ const Header: React.FC = () => {
       <div className="flex flex-col justify-between items-center text-nowrap w-full gap-3 p-3">
         <h1 className="w-full text-2xl lg:text-4xl text-[#202A41]">
           <div className="flex items-center justify-center font-dancing gap-3">
-            <span className="flex-1 text-right">Lê Quốc</span>
+            <span className="flex-1 text-right">Quốc Hùng</span>
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="flex-1">Nguyễn Nhung</span>
+            <span className="flex-1">Thùy Trang</span>
           </div>
         </h1>
         <span
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
         `}
       >
         <div className="flex lg:hidden items-center text-[#c89d9c] justify-center font-dancing gap-1 text-2xl lg:text-3xl">
-          <span>Q</span>
+          <span>H</span>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <span>N</span>
+          <span>T</span>
         </div>
         <div className="hidden lg:flex justify-center items-center flex-1 font-comfortaa font-bold">
           <ul className="flex flex-col lg:flex-row">

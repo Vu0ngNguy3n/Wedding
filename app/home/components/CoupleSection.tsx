@@ -5,17 +5,17 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 
 const CoupleSection = () => {
   const groom = {
-    name: "Lê Văn Quốc",
-    parents: ["Lê Văn Thịnh", "Phạm Thị Khảm"],
-    image: "/images/couple/cr.jpg",
-    bio: "Ai bảo IT chỉ biết code? Quốc đã chứng minh rằng, phía sau bàn phím và những dòng lệnh khô khan là một trái tim luôn chan chứa yêu thương. Không chỉ giỏi viết code, anh còn “debug” được chính trái tim mình để tìm ra tình yêu đích thực. Và hôm nay, Quốc chính thức “commit” cuộc đời mình với người con gái anh thương – một “project” không có deadline, không có bug, chỉ có hạnh phúc và đồng hành. Đó là dự án lớn nhất, đẹp nhất đời anh – hành trình hôn nhân, nơi cả hai cùng dựng xây một tổ ấm vẹn tròn, đầy ắp yêu thương.",
+    name: "Hoàng Quốc Hùng",
+    parents: ["Hoàng Quốc Hùng", "Hoàng Quốc Hùng"],
+    image: "/images/couple/cr1.jpg",
+    bio: "Không chỉ là một người thợ cắt tóc tài hoa, Hùng còn là chàng trai sống đầy tình cảm và luôn biết quan tâm đến những người xung quanh. Mỗi đường kéo của anh không chỉ tạo nên kiểu tóc đẹp mà còn gửi gắm trong đó sự chân thành và niềm vui giản dị của cuộc sống. Với Hùng, niềm hạnh phúc lớn nhất không nằm ở thành công vật chất mà là những khoảnh khắc được sẻ chia cùng gia đình, bạn bè và người anh yêu thương. Hôm nay, Hùng “cắt” thêm một dấu mốc trong hành trình cuộc đời mình — “kiểu tóc” mang tên hạnh phúc, nơi anh cùng người con gái anh thương xây nên một tổ ấm ngọt ngào và ấm áp.",
   };
 
   const bride = {
-    name: "Nguyễn Thị Nhung",
-    parents: ["Nguyễn Văn Phương", "Nguyễn Thị Hợp"],
-    image: "/images/couple/cd.jpg",
-    bio: "Nguyễn Nhung – một cô gái dịu dàng, trong sáng và tràn đầy hơi ấm. Nụ cười của Nhung như thắp sáng mọi khoảnh khắc, mang đến sự bình yên và những rung cảm ngọt ngào khó quên. Dưới vẻ ngoài mong manh ấy là một trái tim mạnh mẽ, biết trân trọng và nâng niu từng giá trị yêu thương. Hôm nay, Nhung rạng rỡ trong hạnh phúc, trao trọn trái tim mình cho người bạn đời, cùng nhau viết tiếp những chương đầy yêu thương, hy vọng và hạnh phúc bền lâu.",
+    name: "Võ Thùy Trang",
+    parents: ["Võ Thùy Trang", "Võ Thùy Trang"],
+    image: "/images/couple/cd1.jpg",
+    bio: "Thùy Trang – cô giáo dịu dàng với nụ cười hiền và ánh mắt chan chứa yêu thương. Mỗi ngày đến lớp, cô không chỉ mang tri thức mà còn mang theo trái tim ấm áp dành cho học trò, đồng nghiệp và những người thân yêu. Ngoài giờ lên lớp, Trang là cô gái sống tình cảm, luôn quan tâm và trân trọng từng người bên cạnh. Hôm nay, trong chiếc váy cưới trắng tinh khôi, cô giáo ấy không chỉ trao đi tình yêu mà còn mở ra trang sách mới của đời mình – nơi cô và người thương cùng viết nên câu chuyện ngọt ngào mang tên “hạnh phúc”.",
   };
 
   return (

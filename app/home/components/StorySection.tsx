@@ -77,7 +77,9 @@ const StorySection = () => {
                 </div>
 
                 {/* Chừa chỗ đối xứng (nếu cần sau này thêm ảnh) */}
-                <div className="hidden md:block md:w-5/12"></div>
+                <div className="md:block md:w-5/12">
+                  <img src="/images/money_bag.png" alt="" />
+                </div>
               </motion.div>
             ))}
           </div>
