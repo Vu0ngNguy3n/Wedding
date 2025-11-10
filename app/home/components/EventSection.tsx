@@ -6,38 +6,20 @@ const EventSection = () => {
   const events = [
     {
       type: "Tiệc cưới nhà gái",
-      datetime: "2025-11-25T16:00:00",
-      endtime: "2025-11-25T18:00:00",
-      location: "Tư gia nhà gái",
-      address: "Nghi Tân, Cửa Lò, Nghệ An",
+      datetime: "2025-11-13T11:15:00",
+      endtime: "2025-11-13T13:00:00",
+      location: "TT Sự kiện tiệc cưới Tuấn Anh",
+      address: "Số 186A - Đ. Vạn Lộc - Khối 6 Nghi Tân - Cửa Lò - Nghệ An",
       googleMaps: "https://maps.app.goo.gl/bDnCtnEtSRQbxnPF7",
       image: "/images/event/ev5.jpg",
     },
     {
       type: "Tiệc cưới nhà trai",
-      datetime: "2025-11-25T16:00:00",
-      endtime: "2025-11-25T18:00:00",
-      location: "Tư gia nhà trai",
-      address: "Nghi Lộc, Cửa Lò, Nghệ An",
-      googleMaps: "https://maps.app.goo.gl/73GeDJDHEQnjiC786",
-      image: "/images/event/ev5.jpg",
-    },
-    {
-      type: "Lễ vu quy",
-      datetime: "2025-11-26T11:00:00",
-      endtime: "2025-11-26T11:30:00",
-      location: "Tư gia nhà gái",
-      address: "Nghi Tân, Cửa Lò, Nghệ An",
-      googleMaps: "https://maps.app.goo.gl/bDnCtnEtSRQbxnPF7",
-      image: "/images/event/ev5.jpg",
-    },
-    {
-      type: "Lễ thành hôn",
-      datetime: "2025-11-26T12:00:00",
-      endtime: "2025-11-26T13:00:00",
-      location: "Tư gia nhà trai",
-      address: "Nghi Lộc, Cửa Lò, Nghệ An",
-      googleMaps: "https://maps.app.goo.gl/73GeDJDHEQnjiC786",
+      datetime: "2025-11-16T11:00:00",
+      endtime: "2025-11-16T13:00:00",
+      location: "Khách sạn Mường Thanh Cửa Lò",
+      address: "Đường Bình Minh, Cửa Lò, Nghệ An",
+      googleMaps: "https://maps.app.goo.gl/cywDLhceMYmb8He48",
       image: "/images/event/ev5.jpg",
     },
   ];
@@ -58,19 +40,19 @@ const EventSection = () => {
           ...tình yêu không phải là nhìn chằm chằm vào nhau, mà là nhìn cùng về
           một hướng...
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {events.map((event, index) => (
             <div
               key={index}
-              className="bg-white p-4 sm:p-5 rounded-xl shadow-lg flex flex-col items-center"
+              className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl transition-shadow duration-300"
             >
               <img
                 src={event.image}
                 alt={event.type}
-                className="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover rounded-t-xl mb-4"
+                className="w-full h-56 sm:h-64 object-cover rounded-xl mb-4"
               />
-              <h3 className="text-lg sm:text-xl font-bold text-[#48332c] mb-1 sm:mb-2 text-center">
-                {event.type.toUpperCase()}
+              <h3 className="text-lg sm:text-xl font-bold text-[#48332c] mb-2 text-center">
+                {event.type}
               </h3>
               <p className="text-gray-700 text-sm sm:text-base mb-1">
                 {new Date(event.datetime).toLocaleString("vi-VN")}
@@ -81,7 +63,7 @@ const EventSection = () => {
               <p className="text-gray-500 italic text-xs sm:text-sm mb-4 text-center">
                 {event.address}
               </p>
-              <div className="flex flex-col gap-3 w-full">
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <button
                   onClick={() =>
                     atcb_action({
@@ -102,7 +84,7 @@ const EventSection = () => {
                       language: "vi",
                     })
                   }
-                  className="flex-1 w-full px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
+                  className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
                 >
                   Thêm vào lịch
                 </button>
@@ -110,7 +92,7 @@ const EventSection = () => {
                   href={event.googleMaps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 w-full px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
+                  className="flex-1 px-4 py-2 border border-[#c19a9a] text-[#48332c] rounded-full hover:bg-[#48332c] hover:text-white transition-colors text-center"
                 >
                   Xem bản đồ
                 </a>

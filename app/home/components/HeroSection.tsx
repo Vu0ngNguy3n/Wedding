@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HeroSection = () => {
-  const bgImages = ["/images/hero/aiImg.png", "/images/hero/aiImg.png"];
+  const bgImages = ["/images/hero/weddingImg01.jpg", "/images/hero/weddingImg.jpg"];
   return (
     <section
       id="home"

@@ -6,16 +6,16 @@ const DonateSection = () => {
   const accounts = [
     {
       title: "Mừng cưới đến chú rể",
-      bank: "Vietinbank",
+      bank: "Vietcombank",
       name: "Hoàng Quốc Hùng",
-      number: "100025021999",
-      qr: "/images/bank/trang.png", // đường dẫn QR code
+      number: "0101001264352",
+      qr: "/images/bank/hung.png", // đường dẫn QR code
     },
     {
       title: "Mừng cưới đến cô dâu",
       bank: "Vietinbank",
       name: "Võ Thùy Trang",
-      number: "9336154201",
+      number: "107871789140",
       qr: "/images/bank/trang.png", // đường dẫn QR code
     },
   ];

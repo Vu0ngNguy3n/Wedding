@@ -6,14 +6,14 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 const CoupleSection = () => {
   const groom = {
     name: "Hoàng Quốc Hùng",
-    parents: ["Hoàng Quốc Hùng", "Hoàng Quốc Hùng"],
+    parents: ["Hoàng Văn Thành", "Trần Thị Thư"],
     image: "/images/couple/cr1.jpg",
     bio: "Không chỉ là một người thợ cắt tóc tài hoa, Hùng còn là chàng trai sống đầy tình cảm và luôn biết quan tâm đến những người xung quanh. Mỗi đường kéo của anh không chỉ tạo nên kiểu tóc đẹp mà còn gửi gắm trong đó sự chân thành và niềm vui giản dị của cuộc sống. Với Hùng, niềm hạnh phúc lớn nhất không nằm ở thành công vật chất mà là những khoảnh khắc được sẻ chia cùng gia đình, bạn bè và người anh yêu thương. Hôm nay, Hùng “cắt” thêm một dấu mốc trong hành trình cuộc đời mình — “kiểu tóc” mang tên hạnh phúc, nơi anh cùng người con gái anh thương xây nên một tổ ấm ngọt ngào và ấm áp.",
   };
 
   const bride = {
     name: "Võ Thùy Trang",
-    parents: ["Võ Thùy Trang", "Võ Thùy Trang"],
+    parents: ["Võ Văn Xuân", "Nguyễn Thị Hồng"],
     image: "/images/couple/cd1.jpg",
     bio: "Thùy Trang – cô giáo dịu dàng với nụ cười hiền và ánh mắt chan chứa yêu thương. Mỗi ngày đến lớp, cô không chỉ mang tri thức mà còn mang theo trái tim ấm áp dành cho học trò, đồng nghiệp và những người thân yêu. Ngoài giờ lên lớp, Trang là cô gái sống tình cảm, luôn quan tâm và trân trọng từng người bên cạnh. Hôm nay, trong chiếc váy cưới trắng tinh khôi, cô giáo ấy không chỉ trao đi tình yêu mà còn mở ra trang sách mới của đời mình – nơi cô và người thương cùng viết nên câu chuyện ngọt ngào mang tên “hạnh phúc”.",
   };
